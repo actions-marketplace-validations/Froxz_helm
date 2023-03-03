@@ -8,6 +8,6 @@ RUN apk add --no-cache --update git curl bash openssl && \
 
 COPY . /usr/src/
 
-RUN npm ci
+RUN npm ci --prefix /usr/src
 
 ENTRYPOINT ["node", "/usr/src/index.js"]
