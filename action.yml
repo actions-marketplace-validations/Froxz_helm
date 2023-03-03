@@ -1,9 +1,9 @@
 name: Helm 3 Deploy
 description: Deploys a helm chart to Kubernetes
-author: froxz
+author: Froxz
 branding:
+  color: blue
   icon: anchor
-  color: gray-dark
 inputs:
   release:
     description: Helm release name. Will be combined with track if set. (required)

@@ -4,9 +4,6 @@ Deploys a helm chart using GitHub actions. Supports canary deployments and
 provides a built in helm chart for apps that listen over http to get your ramped
 up quickly.
 
-View an example repository using this action at
-[github.com/deliverybot/example-helm](https://github.com/deliverybot/example-helm).
-
 ## Parameters
 
 ### Inputs
@@ -42,7 +39,7 @@ action will execute a `helm delete $service`
 
 #### Versions
 
-- `helm`: v3.0.0
+- `helm`: v3
 
 ### Environment
 
@@ -67,10 +64,10 @@ jobs:
   deployment:
     runs-on: 'ubuntu-latest'
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v3
 
     - name: 'Deploy'
-      uses: 'deliverybot/helm@v1'
+      uses: 'froxz/helm@v1'
       with:
         release: 'nginx'
         namespace: 'default'
@@ -108,10 +105,10 @@ jobs:
   deployment:
     runs-on: 'ubuntu-latest'
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v3
 
     - name: 'Deploy'
-      uses: 'deliverybot/helm@v1'
+      uses: 'froxz/helm@v1'
       with:
         release: 'nginx'
         track: canary
@@ -143,7 +140,7 @@ jobs:
     runs-on: 'ubuntu-latest'
     steps:
     - name: 'Deploy'
-      uses: 'deliverybot/helm@v1'
+      uses: 'froxz/helm@v1'
       with:
         # Task remove means to remove the helm release.
         task: 'remove'
