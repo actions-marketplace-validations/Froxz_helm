@@ -1,8 +1,9 @@
-name: Deliverybot Helm Action
-description: Deploys a helm chart
-author: deliverybot
-icon: box
-color: gray-dark
+name: Helm 3 Deploy
+description: Deploys a helm chart to Kubernetes
+author: froxz
+branding:
+  icon: anchor
+  color: gray-dark
 inputs:
   release:
     description: Helm release name. Will be combined with track if set. (required)
@@ -26,9 +27,6 @@ inputs:
     required: false
   atomic:
     description: If true, upgrade process rolls back changes made in case of failed upgrade. Defaults to true.
-    required: false
-  helm:
-    description: Helm binary to execute, one of [helm, helm3].
     required: false
   token:
     description: Github repository token. If included and the event is a deployment
